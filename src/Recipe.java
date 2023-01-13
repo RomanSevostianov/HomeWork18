@@ -1,10 +1,13 @@
 import java.util.Objects;
+import java.util.List;
+
 
 public class Recipe  {
 
     public String lotsOfProducts;
     public double totalCost;
     public String nameRecipe;
+    public List< Product > products;
 
     public Recipe(String nameRecipe,   String lotsOfProducts, double totalCost ) {
         this.lotsOfProducts = lotsOfProducts;

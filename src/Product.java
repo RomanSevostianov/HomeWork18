@@ -11,6 +11,7 @@ public class Product {
         this.productCoast = productCoast;
         this.weightInKilograms = weightInKilograms;
 
+
         if (name == null || name.isBlank() || name.isEmpty()) // проверка если строка не пустая, если нет пробела, отсутствует значение
         {
             throw new RuntimeException("Введите имя продукта");
