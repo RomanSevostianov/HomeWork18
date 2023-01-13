@@ -1,53 +1,42 @@
 import java.util.Objects;
-import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 
-public class Recipe  {
+public class Recipe {
 
-    public String lotsOfProducts;
-    public double totalCost;
     public String nameRecipe;
-    public List< Product > products;
+    public Set< Product > lotsOfProducts;
 
-    public Recipe(String nameRecipe,   String lotsOfProducts, double totalCost ) {
-        this.lotsOfProducts = lotsOfProducts;
-        this.totalCost = totalCost;
+    public Recipe(String nameRecipe, Set<Product> lotsOfProducts) {
         this.nameRecipe = nameRecipe;
-
+        this.lotsOfProducts = lotsOfProducts;
     }
-
-    public String getLotsOfProducts() {
-        return lotsOfProducts;
-    }
-
-    public double getTotalCost() {
-        return totalCost;
-    }
-
     public String getNameRecipe() {
         return nameRecipe;
     }
-
+    public Set<Product> getLotsOfProducts() {
+        return lotsOfProducts;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Recipe)) return false;
         Recipe recipe = (Recipe) o;
-        return Double.compare(recipe.getTotalCost(), getTotalCost()) == 0 && Objects.equals(getLotsOfProducts(), recipe.getLotsOfProducts()) && Objects.equals(getNameRecipe(), recipe.getNameRecipe());
+        return Objects.equals(getNameRecipe(), recipe.getNameRecipe()) && Objects.equals(getLotsOfProducts(), recipe.getLotsOfProducts());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLotsOfProducts(), getTotalCost(), getNameRecipe());
+        return Objects.hash(getNameRecipe(), getLotsOfProducts());
     }
 
     @Override
     public String toString() {
         return "Recipe{" +
-                "lotsOfProducts='" + lotsOfProducts + '\'' +
-                ", totalCost=" + totalCost +
-                ", nameRecipe='" + nameRecipe + '\'' +
+                "nameRecipe='" + nameRecipe + '\'' +
+                ", lotsOfProducts=" + lotsOfProducts +
                 '}';
     }
 }

@@ -24,6 +24,8 @@ public class Product {
         }
     }
 
+
+
     public String getName() {
         return name;
     }
@@ -47,6 +49,8 @@ public class Product {
     public void setWeightInKilograms(double weightInKilograms) {
         this.weightInKilograms = weightInKilograms;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

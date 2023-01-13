@@ -13,10 +13,6 @@ public class Main {
         list.add(new Product("Макароны - спиралька", 20, 1));
 
         List<Recipe> listRecipe = new ArrayList<>();
-        listRecipe.add(new Recipe("Винегрет", "Зеленый горошек, огурец", 105));
-        listRecipe.add(new Recipe("Мимоза", "Консервированная рыба, сыр, майонез", 85));
-        listRecipe.add(new Recipe("Винегрет", "Зеленый горошек, огурец", 105));
-
 
         chekingNameRecipe(listRecipe);
         System.out.println();
@@ -34,8 +30,8 @@ public class Main {
         chekingNameRecipe(listRecipe);
 
         //выделение первого поля
-       // List<String> nameReciteList = listRecipe.stream().map(Recipe::getNameRecipe).collect(Collectors.toList());
-       // nameReciteList.forEach(System.out::println);
+        // List<String> nameReciteList = listRecipe.stream().map(Recipe::getNameRecipe).collect(Collectors.toList());
+        // nameReciteList.forEach(System.out::println);
 
 
         numSet();
@@ -54,7 +50,7 @@ public class Main {
             for (int j = i + 1; j < list.size(); j++) {
                 num2 = list.get(j);
                 if (num2.equals(num1)) {
-                   // throw new RuntimeException("Если дубликаты");
+                    // throw new RuntimeException("Если дубликаты");
                 }
             }
         }
@@ -71,7 +67,7 @@ public class Main {
             for (int j = i + 1; j < listRecipe.size(); j++) {
                 num2 = listRecipe.get(j);
                 if (num2.equals(num1)) {
-                 //   throw new RuntimeException("Если дубликаты");
+                    //   throw new RuntimeException("Если дубликаты");
                 }
             }
         }
