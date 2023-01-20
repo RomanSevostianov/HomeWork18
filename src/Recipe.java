@@ -1,42 +1,37 @@
-import java.util.Objects;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 
 public class Recipe {
 
     public String nameRecipe;
-    public Set< Product > lotsOfProducts;
+    public Map<Product, Integer> map =new HashMap<>();
 
-    public Recipe(String nameRecipe, Set<Product> lotsOfProducts) {
+    public Recipe(String nameRecipe) {
         this.nameRecipe = nameRecipe;
-        this.lotsOfProducts = lotsOfProducts;
+
+
+
     }
     public String getNameRecipe() {
         return nameRecipe;
     }
-    public Set<Product> getLotsOfProducts() {
-        return lotsOfProducts;
+
+    public void getN (String get){
+        if (getNameRecipe()==null){
+
+        }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Recipe)) return false;
-        Recipe recipe = (Recipe) o;
-        return Objects.equals(getNameRecipe(), recipe.getNameRecipe()) && Objects.equals(getLotsOfProducts(), recipe.getLotsOfProducts());
-    }
+    public void testRecipe (String nameRecipe){
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNameRecipe(), getLotsOfProducts());
+
     }
 
     @Override
     public String toString() {
         return "Recipe{" +
                 "nameRecipe='" + nameRecipe + '\'' +
-                ", lotsOfProducts=" + lotsOfProducts +
+                ", map=" + map +
                 '}';
     }
 }

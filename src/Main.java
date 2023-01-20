@@ -12,33 +12,55 @@ public class Main {
         list.add(new Product("Змея в майонезе", 2, 34));
         list.add(new Product("Макароны - спиралька", 20, 1));
 
+
+        //----------------------------------------------------------------------------
+        Recipe cabbageSoup = new Recipe("Cуп с капустой");
+        Recipe vinaigretta = new Recipe("Винегрет");
+        Recipe borsch = new Recipe("Борщ");
+        Recipe pizza = new Recipe("Пицца");
+
+
+// суп с капустой
+        cabbageSoup.map.put(list.get(2), 5);
+        cabbageSoup.map.put(list.get(3), 2);
+        vinaigretta.map.put(list.get(5), 8);
+        borsch.map.put(list.get(4), 8);
+
+        System.out.println(cabbageSoup);
+
+     /*   //double balance = ((Double)cabbageSoup.get("Зоя")).doubleValue();
+        double kilogram = ((Integer)cabbageSoup.get("Суп с капустой").IntegerValue());
+        // cabbageSoup.put("Зоя", new Double(balance + 1000));
+        cabbageSoup.map.put("Суп с капустой",new Integer(kilogram + 5));
+        System.out.println("Новый мес: " + cabbageSoup.get("Суп с капустой"));*/
+        //----------------------------------------------------------------------------
+
         List<Recipe> listRecipe = new ArrayList<>();
 
-        chekingNameRecipe(listRecipe);
+        //  chekingNameRecipe(listRecipe);
         System.out.println();
 
         Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+            //     System.out.println(iterator.next());
         }
         Iterator iterator2 = listRecipe.iterator();
         while (iterator2.hasNext()) {
             System.out.println(iterator2.next());
         }
-        System.out.println(list.size());
-        chekingTheCopy(list);
-        chekingNameRecipe(listRecipe);
+        //  System.out.println(list.size());
+        //      chekingTheCopy(list);
+        //    chekingNameRecipe(listRecipe);
 
         //выделение первого поля
         // List<String> nameReciteList = listRecipe.stream().map(Recipe::getNameRecipe).collect(Collectors.toList());
         // nameReciteList.forEach(System.out::println);
 
 
-        numSet();
+        //numSet();
 
     }
 //----------------------------------------------------------------------------------------------------------
-
 
 
     public static <T> boolean chekingTheCopy(List<T> list)  // проверка на дубликаты.
