@@ -25,7 +25,6 @@ public class Product {
     }
 
 
-
     public String getName() {
         return name;
     }
@@ -50,6 +49,10 @@ public class Product {
         this.weightInKilograms = weightInKilograms;
     }
 
+    public double generalCoast(double n, double i) {
+        double generalPrice = n * i;
+        return generalPrice;
+    }
 
 
     @Override

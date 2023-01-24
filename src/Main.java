@@ -1,5 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,20 +22,29 @@ public class Main {
         Recipe pizza = new Recipe("Пицца");
 
 
+        NewCollection key1 = new NewCollection("key1", 3);
+        NewCollection key2 = new NewCollection("key2", 5);
+        NewCollection key3 = new NewCollection("key3", 10);
+
+
 // суп с капустой
-        cabbageSoup.map.put(list.get(2), 5);
-        cabbageSoup.map.put(list.get(3), 2);
+        cabbageSoup.map.put(list.get(2), 3);
+        cabbageSoup.map.put(list.get(1), 2);
         vinaigretta.map.put(list.get(5), 8);
         borsch.map.put(list.get(4), 8);
-
         System.out.println(cabbageSoup);
 
-     /*   //double balance = ((Double)cabbageSoup.get("Зоя")).doubleValue();
-        double kilogram = ((Integer)cabbageSoup.get("Суп с капустой").IntegerValue());
-        // cabbageSoup.put("Зоя", new Double(balance + 1000));
-        cabbageSoup.map.put("Суп с капустой",new Integer(kilogram + 5));
-        System.out.println("Новый мес: " + cabbageSoup.get("Суп с капустой"));*/
-        //----------------------------------------------------------------------------
+
+        if (cabbageSoup.sizeProd() <= 1) {
+            System.out.println("У супа нет рецепта");
+        }
+
+
+        for (int i = 0; i < list.size(); i++) {
+            double s = list.get(i).getProductCoast() * list.get(i).getWeightInKilograms();
+            System.out.println(list.get(i).getName() + " Общая сумма   " + s);
+        }
+
 
         List<Recipe> listRecipe = new ArrayList<>();
 
@@ -48,6 +59,8 @@ public class Main {
         while (iterator2.hasNext()) {
             System.out.println(iterator2.next());
         }
+
+
         //  System.out.println(list.size());
         //      chekingTheCopy(list);
         //    chekingNameRecipe(listRecipe);
@@ -59,8 +72,11 @@ public class Main {
 
         //numSet();
 
+
+
     }
 //----------------------------------------------------------------------------------------------------------
+
 
 
     public static <T> boolean chekingTheCopy(List<T> list)  // проверка на дубликаты.
